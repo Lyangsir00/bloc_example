@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_example/ui/coounter/counter_screen2.dart';
 
 import '../../bloc/counter/counter_bloc.dart';
 
@@ -14,7 +15,9 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("CounterScreen1"),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,6 +56,16 @@ class _CounterScreenState extends State<CounterScreen> {
             ],
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => CounterScreen2(),
+            ),
+          );
+        },
+        child: Icon(Icons.arrow_forward),
       ),
     );
   }
