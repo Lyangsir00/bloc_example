@@ -1,9 +1,2 @@
-<<<<<<< HEAD
-# bloc_example
-=======
-# Flutter Counter App
-A simple counter app built with flutter.
+# bloc_examplgit add README.md
 
-## Technologies used
- -
->>>>>>> a150c0a (updated:slider and toogle button)
