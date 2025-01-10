@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_example/bloc/switch/bloc/switch_bloc.dart';
+import 'package:flutter_bloc_example/bloc/switch/switch_bloc.dart';
 
 class SwitchScreen extends StatefulWidget {
   const SwitchScreen({super.key});
