@@ -21,7 +21,7 @@ class _SwitchScreenState extends State<SwitchScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Notification"),
+              const Text("Notification"),
               BlocBuilder<SwitchBloc, SwitchState>(
                 buildWhen: (previous, current) =>
                     previous.isSwitch != current.isSwitch,
@@ -38,7 +38,7 @@ class _SwitchScreenState extends State<SwitchScreen> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           BlocBuilder<SwitchBloc, SwitchState>(
@@ -50,7 +50,7 @@ class _SwitchScreenState extends State<SwitchScreen> {
               );
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           BlocBuilder<SwitchBloc, SwitchState>(

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_example/ui/coounter/counter_screen2.dart';
-
-import '../../../bloc/counter/counter_bloc.dart';
+import 'package:flutter_bloc_example/bloc/counter/counter_bloc.dart';
+import 'package:flutter_bloc_example/ui/counter/counter_screen2.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -16,7 +15,7 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CounterScreen1"),
+        title: const Text("CounterScreen1"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +26,8 @@ class _CounterScreenState extends State<CounterScreen> {
               return Center(
                 child: Text(
                   state.counter.toString(),
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               );
             },
@@ -41,9 +41,9 @@ class _CounterScreenState extends State<CounterScreen> {
                         IncrementCounter(),
                       );
                 },
-                child: Text("incrememt"),
+                child: const Text("incrememt"),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 30,
               ),
               ElevatedButton(
@@ -52,7 +52,7 @@ class _CounterScreenState extends State<CounterScreen> {
                           DecrementCounter(),
                         );
                   },
-                  child: Text("Decrement"))
+                  child: const Text("Decrement"))
             ],
           )
         ],
@@ -65,7 +65,7 @@ class _CounterScreenState extends State<CounterScreen> {
             ),
           );
         },
-        child: Icon(Icons.arrow_forward),
+        child: const Icon(Icons.arrow_forward),
       ),
     );
   }

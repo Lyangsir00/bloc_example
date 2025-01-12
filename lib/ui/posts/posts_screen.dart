@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_example/bloc/posts/bloc/posts_bloc.dart';
-import 'package:flutter_bloc_example/ui/coounter/counter_screen.dart';
+import 'package:flutter_bloc_example/ui/counter/counter_screen.dart';
 import 'package:flutter_bloc_example/ui/switch/switch_screen.dart';
 import 'package:flutter_bloc_example/utils/enums.dart';
 
@@ -22,20 +22,20 @@ class _PostsScreenState extends State<PostsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Posts Page"),
+        title: const Text("Posts Page"),
         actions: [
           InkWell(
             onDoubleTap: () => toggle(),
-            child: Text(
+            child: const Text(
               "Toggle switch",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           InkWell(
-            child: Text("Counter app",
+            child: const Text("Counter app",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             onTap: () {
               Navigator.of(context).push(
@@ -47,12 +47,12 @@ class _PostsScreenState extends State<PostsScreen> {
       body: BlocBuilder<PostsBloc, PostsState>(
         builder: (context, state) {
           if (state.postStatus == PostStatus.loading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else {
             return ListView.builder(
               itemBuilder: (context, index) {
                 return Card(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   color: const Color.fromARGB(255, 222, 152, 234),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +80,7 @@ class _PostsScreenState extends State<PostsScreen> {
         onPressed: () {
           context.read<PostsBloc>().add(PostFetch());
         },
-        child: Center(child: Icon(Icons.ads_click)),
+        child: const Center(child: Icon(Icons.ads_click)),
       ),
     );
   }

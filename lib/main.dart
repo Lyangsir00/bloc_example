@@ -4,15 +4,16 @@ import 'package:flutter_bloc_example/bloc/counter/counter_bloc.dart';
 import 'package:flutter_bloc_example/bloc/posts/bloc/posts_bloc.dart';
 import 'package:flutter_bloc_example/bloc/switch/switch_bloc.dart';
 import 'package:flutter_bloc_example/ui/posts/posts_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'package:flutter_bloc_example/features/models/posts_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class PostRepo {
   Future<List<PostsModel>> fetchPost() async {
     try {
+      final apiUrl = dotenv.env['API_URL'] ?? "not found";
       final response = await http.get(
-        Uri.parse("https://jsonplaceholder.typicode.com/posts"),
+        Uri.parse(apiUrl),
       );
 
       if (response.statusCode == 200) {
@@ -17,7 +19,6 @@ class PostRepo {
       }
     } catch (e) {
       print('Error: $e');
-
       return [];
     }
   }
